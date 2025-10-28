@@ -1,0 +1,364 @@
+/* Variáveis de Cores (Baseado no Dark Mode e nas suas imagens) */
+:root {
+    --bg-primary: #1e1e2e;         /* Fundo principal (roxo escuro) */
+    --bg-secondary: #2a2a3b;       /* Fundo dos cartões/componentes */
+    --bg-table-row: #3a3a5c;       /* Fundo das linhas da tabela */
+    --text-primary: #f8f8f2;       /* Texto claro */
+    --text-secondary: #bd93f9;     /* Texto de destaque (roxo claro) */
+    --border-color: #44475a;       /* Borda sutil */
+    --color-action: #2f80ed;       /* Azul primário para ações */
+    --color-danger: #ff5555;       /* Vermelho para exclusão */
+    --shadow-level: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 20px;
+}
+
+/* --------------------- */
+/* 1. CABEÇALHO E BOTÕES */
+/* --------------------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-level);
+}
+
+header h1 {
+    font-size: 1.5em;
+    color: var(--text-secondary);
+}
+
+.action-btn {
+    background-color: var(--color-action);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.action-btn:hover {
+    background-color: #1c60b3;
+}
+
+/* --------------------- */
+/* 2. PAINÉIS (CARTÕES) */
+/* --------------------- */
+#painel-main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.task-section {
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow-level);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.section-header h2 {
+    color: var(--text-secondary);
+    font-size: 1.2em;
+}
+
+.section-actions button {
+    background-color: var(--color-danger);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+/* --------------------- */
+/* 3. TABELA DE TAREFAS */
+/* --------------------- */
+table {
+    width: 100%;
+    border-collapse: separate; /* Usar separate para bordas arredondadas */
+    border-spacing: 0 5px; /* Espaçamento entre linhas */
+}
+
+thead th {
+    background-color: #33334d;
+    color: #ccc;
+    padding: 10px;
+    text-align: left;
+    font-weight: normal;
+    font-size: 0.9em;
+}
+
+tbody tr {
+    background-color: var(--bg-table-row);
+    transition: background-color 0.2s;
+}
+tbody tr:hover {
+    background-color: #4a4a75;
+}
+
+tbody td {
+    padding: 12px 10px;
+    font-size: 0.95em;
+    cursor: pointer;
+}
+
+/* Arredondamento das bordas da tabela (para a primeira e última linha) */
+tbody tr:first-child td:first-child { border-top-left-radius: 6px; }
+tbody tr:first-child td:last-child { border-top-right-radius: 6px; }
+tbody tr:last-child td:first-child { border-bottom-left-radius: 6px; }
+tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
+
+/* Botão de Adicionar Tarefa */
+.adicionar-btn {
+    margin-top: 15px;
+    background: none;
+    border: 1px dashed var(--border-color);
+    color: var(--text-secondary);
+    padding: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+.adicionar-btn:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+/* --------------------- */
+/* 4. DROPDOWNS COLORIDOS (Badges) */
+/* --------------------- */
+
+.badge {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.85em;
+    color: white;
+    display: inline-block;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* CORES DOS STATUS (Baseado na imagem 1) */
+.status-pronto-inicio { background-color: #2b77db; } /* Azul Forte */
+.status-em-andamento { background-color: #ffaa33; } /* Laranja */
+.status-aguardando { background-color: #8be9fd; color: #2a2a3b; } /* Azul Claro */
+.status-implementacao { background-color: #9955bb; } /* Roxo */
+.status-feito { background-color: #50fa7b; color: #2a2a3b; } /* Verde Claro */
+.status-parado { background-color: #ff5555; } /* Vermelho */
+
+/* CORES DOS TIPOS (Baseado na imagem 2) */
+.tipo-qualidade { background-color: #ff79c6; } /* Rosa */
+.tipo-funcionalidade { background-color: #50fa7b; color: #2a2a3b; } /* Verde */
+.tipo-bug { background-color: #ff5555; } /* Vermelho */
+.tipo-teste { background-color: #6272a4; } /* Cinza Escuro */
+.tipo-seguranca { background-color: #2ecc71; } /* Verde Escuro */
+.tipo-outro { background-color: #00bcd4; } /* Ciano/Azul */
+
+.excluir-btn {
+    background: none;
+    border: none;
+    color: var(--color-danger);
+    cursor: pointer;
+    font-size: 1.1em;
+    margin-right: 5px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+.excluir-btn:hover {
+    opacity: 1;
+}
+
+/* --------------------- */
+/* 5. MODAL (Bonito e Centralizado) */
+/* --------------------- */
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.modal-backdrop.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: var(--bg-secondary);
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: var(--shadow-level);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.3s ease-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#modal-title-text {
+    color: var(--text-secondary);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 0.9em;
+}
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 1em;
+}
+.horizontal-group {
+    display: flex;
+    gap: 15px;
+}
+.horizontal-group .form-field-group {
+    flex: 1;
+}
+
+.modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+.modal-actions button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+.btn-save { background-color: var(--color-action); color: white; }
+.btn-delete { background-color: var(--color-danger); color: white; }
+.btn-close { background-color: var(--border-color); color: var(--text-primary); }
+
+#card-form .modal-actions {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+
+@media (max-width: 768px) {
+  /* Ajusta todo o container das tarefas para empilhar à direita */
+  #painel-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 10px;
+  }
+
+  .task-section {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+    width: 100%;
+  }
+
+  thead {
+    display: none;
+  }
+
+  tbody tr {
+    background-color: var(--bg-secondary);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: var(--shadow-level);
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: flex-end;   /* conteúdo na direita */
+    text-align: right;            /* texto alinhado à direita */
+    padding: 8px 5px;
+    font-size: 0.9em;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    flex: 1;
+    font-weight: bold;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+    text-align: left; /* a label fica na esquerda */
+    margin-right: 10px;
+  }
+
+  tbody td:last-child {
+    border-bottom: none;
+  }
+
+  .badge, .tipo, .status, .codigo, .responsavel {
+    /* Se tiverem badges ou spans dentro da célula, garantem o alinhamento à direita */
+    margin-left: auto;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
