@@ -1,13 +1,12 @@
-/* Variáveis de Cores (Baseado no Dark Mode e nas suas imagens) */
 :root {
-    --bg-primary: #1e1e2e;         /* Fundo principal (roxo escuro) */
-    --bg-secondary: #2a2a3b;       /* Fundo dos cartões/componentes */
-    --bg-table-row: #3a3a5c;       /* Fundo das linhas da tabela */
-    --text-primary: #f8f8f2;       /* Texto claro */
-    --text-secondary: #bd93f9;     /* Texto de destaque (roxo claro) */
-    --border-color: #44475a;       /* Borda sutil */
-    --color-action: #2f80ed;       /* Azul primário para ações */
-    --color-danger: #ff5555;       /* Vermelho para exclusão */
+    --bg-primary: #1e1e2e;        
+    --bg-secondary: #2a2a3b;       
+    --bg-table-row: #3a3a5c;       
+    --text-primary: #f8f8f2;      
+    --text-secondary: #bd93f9;     
+    --border-color: #44475a;       
+    --color-action: #2f80ed;      
+    --color-danger: #ff5555;       
     --shadow-level: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -24,9 +23,6 @@ body {
     padding: 20px;
 }
 
-/* --------------------- */
-/* 1. CABEÇALHO E BOTÕES */
-/* --------------------- */
 header {
     display: flex;
     justify-content: space-between;
@@ -103,8 +99,8 @@ header h1 {
 /* --------------------- */
 table {
     width: 100%;
-    border-collapse: separate; /* Usar separate para bordas arredondadas */
-    border-spacing: 0 5px; /* Espaçamento entre linhas */
+    border-collapse: separate; 
+    border-spacing: 0 5px;
 }
 
 thead th {
@@ -130,7 +126,7 @@ tbody td {
     cursor: pointer;
 }
 
-/* Arredondamento das bordas da tabela (para a primeira e última linha) */
+/* Arredondamento das bordas da tabela*/
 tbody tr:first-child td:first-child { border-top-left-radius: 6px; }
 tbody tr:first-child td:last-child { border-top-right-radius: 6px; }
 tbody tr:last-child td:first-child { border-bottom-left-radius: 6px; }
@@ -154,9 +150,7 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
 }
 
 
-/* --------------------- */
-/* 4. DROPDOWNS COLORIDOS (Badges) */
-/* --------------------- */
+/* DROPDOWNS COLORIDOS */
 
 .badge {
     padding: 5px 12px;
@@ -170,21 +164,21 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* CORES DOS STATUS (Baseado na imagem 1) */
-.status-pronto-inicio { background-color: #2b77db; } /* Azul Forte */
-.status-em-andamento { background-color: #ffaa33; } /* Laranja */
-.status-aguardando { background-color: #8be9fd; color: #2a2a3b; } /* Azul Claro */
-.status-implementacao { background-color: #9955bb; } /* Roxo */
-.status-feito { background-color: #50fa7b; color: #2a2a3b; } /* Verde Claro */
-.status-parado { background-color: #ff5555; } /* Vermelho */
+/* CORES DOS STATUS  */
+.status-pronto-inicio { background-color: #2b77db; } 
+.status-em-andamento { background-color: #ffaa33; } 
+.status-aguardando { background-color: #8be9fd; color: #2a2a3b; } 
+.status-implementacao { background-color: #9955bb; }
+.status-feito { background-color: #50fa7b; color: #2a2a3b; } 
+.status-parado { background-color: #ff5555; } 
 
-/* CORES DOS TIPOS (Baseado na imagem 2) */
-.tipo-qualidade { background-color: #ff79c6; } /* Rosa */
-.tipo-funcionalidade { background-color: #50fa7b; color: #2a2a3b; } /* Verde */
-.tipo-bug { background-color: #ff5555; } /* Vermelho */
-.tipo-teste { background-color: #6272a4; } /* Cinza Escuro */
-.tipo-seguranca { background-color: #2ecc71; } /* Verde Escuro */
-.tipo-outro { background-color: #00bcd4; } /* Ciano/Azul */
+/* CORES DOS TIPOS */
+.tipo-qualidade { background-color: #ff79c6; } 
+.tipo-funcionalidade { background-color: #50fa7b; color: #2a2a3b; } 
+.tipo-bug { background-color: #ff5555; } 
+.tipo-teste { background-color: #6272a4; }
+.tipo-seguranca { background-color: #2ecc71; } 
+.tipo-outro { background-color: #00bcd4; }
 
 .excluir-btn {
     background: none;
@@ -200,9 +194,8 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
     opacity: 1;
 }
 
-/* --------------------- */
-/* 5. MODAL (Bonito e Centralizado) */
-/* --------------------- */
+
+/* 5. MODAL */
 
 .modal-backdrop {
     position: fixed;
@@ -210,7 +203,7 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    background-color: rgba(0, 0, 0, 0.8); 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -289,9 +282,9 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
     gap: 10px;
 }
 
-
+/*Responsivo*/
 @media (max-width: 768px) {
-  /* Ajusta todo o container das tarefas para empilhar à direita */
+  
   #painel-main {
     display: flex;
     flex-direction: column;
@@ -323,8 +316,8 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
 
   tbody td {
     display: flex;
-    justify-content: flex-end;   /* conteúdo na direita */
-    text-align: right;            /* texto alinhado à direita */
+    justify-content: flex-end;  
+    text-align: right;           
     padding: 8px 5px;
     font-size: 0.9em;
     border-bottom: 1px solid var(--border-color);
@@ -336,7 +329,7 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
     font-weight: bold;
     color: var(--text-secondary);
     text-transform: capitalize;
-    text-align: left; /* a label fica na esquerda */
+    text-align: left; 
     margin-right: 10px;
   }
 
@@ -345,7 +338,6 @@ tbody tr:last-child td:last-child { border-bottom-right-radius: 6px; }
   }
 
   .badge, .tipo, .status, .codigo, .responsavel {
-    /* Se tiverem badges ou spans dentro da célula, garantem o alinhamento à direita */
     margin-left: auto;
   }
 

@@ -1,5 +1,5 @@
 // ---------------------
-// DADOS INICIAIS (Estrutura de Cartões/Seções e Tarefas)
+// DADOS INICIAIS
 // ---------------------
 let cards = [
     { 
@@ -148,13 +148,13 @@ function abrirModalEdicao(taskId, containerId) { abrirModal(taskId, containerId,
 function fecharModal() { modalBackdrop.classList.add('hidden'); currentEditingTaskId = null; currentContainerId = null; }
 
 // ---------------------
-// FUNÇÕES DO MODAL DE CARTÃO (NOVO)
+// FUNÇÕES DO MODAL DE CARTÃO
 // ---------------------
 function abrirCardModal() { cardFormModal.classList.remove('hidden'); }
 function fecharCardModal() { cardFormModal.classList.add('hidden'); cardForm.reset(); }
 
 // ---------------------
-// FUNÇÕES DE MANIPULAÇÃO DE DADOS (Cartões e Tarefas)
+// FUNÇÕES DE MANIPULAÇÃO DE DADOS
 // ---------------------
 
 function criarCartao(titulo, tipo) {
@@ -169,7 +169,7 @@ function criarCartao(titulo, tipo) {
     renderTarefas();
 }
 
-// FUNÇÃO MODIFICADA: EXCLUSÃO INSTANTÂNEA
+// EXCLUSÃO
 function excluirCartao(id) {
     cards = cards.filter(c => c.id !== id);
     renderTarefas();
@@ -190,13 +190,12 @@ function excluirTarefa(event, taskId) {
     }
 }
 
-// FUNÇÃO DE SUBMISSÃO PARA O MODAL SIMPLIFICADO DE CARTÃO (SÓ TÍTULO)
+
 function handleCardFormSubmit(e) {
     e.preventDefault();
     
     const title = document.getElementById('card-title').value.trim();
     
-    // Tipo fixo para o novo cartão, pois o select foi removido do HTML
     const defaultType = 'sprint'; 
 
     if (!title) {
@@ -258,7 +257,7 @@ function handleFormSubmit(e) {
 document.addEventListener('DOMContentLoaded', () => {
     renderTarefas();
 
-    // O botão agora chama o modal gráfico de criação de cartão
+   
     btnCriarCartao.addEventListener('click', abrirCardModal);
 
     // Listeners do Modal de Tarefa
